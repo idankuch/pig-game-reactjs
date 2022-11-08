@@ -1,0 +1,20 @@
+.modal {
+  position: absolute;
+  top: 50px;
+  left: 150px;
+  width: 70%;
+  height: 250px;
+  border-radius: 10px;
+  border-color: blueviolet;
+  border-width: 12px;
+  color: #000;
+  padding: 10px;
+  z-index: 10;
+  background-color: #c7365f;
+  text-align: center;
+}
+
+.message{
+  margin-top: 50px;
+  font-size: 4rem
+}
