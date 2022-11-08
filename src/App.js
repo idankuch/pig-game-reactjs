@@ -13,16 +13,11 @@ function App() {
   const [activePlayer, setActivePlayer] = useState(0);
   const [dice, setDice] = useState("");
   const [showWinner, setShowWinner] = useState(false);
-  let player1, player2 = "";
-
-//   useEffect(()=> {player1 = prompt("Enter Player 1 name");
-//   player2 = prompt("Enter Player 2 name");
-//   console.log(player1,player2);
-// },[])
+  const winningScore = 100;
 
   //check for winning condition, saves the score and change active player
   function holdScore() {
-    totalScore[activePlayer] + currentScore[activePlayer] >=10 ? setShowWinner(true) : changePlayer(); //winning condition
+    totalScore[activePlayer] + currentScore[activePlayer] >= winningScore ? setShowWinner(true) : changePlayer(); //winning condition
     activePlayer === 0
       ? setTotalScore([
           currentScore[activePlayer] + totalScore[activePlayer],
@@ -39,7 +34,7 @@ function App() {
   //create new dice value and sums it to previous values, if rolled 1 change active player
   function rollDice() {
     const roll = Math.trunc(Math.random() * 6) + 1;
-    setDice(`./img/dice-${roll}.png`);
+    setDice(`/images/dice-${roll}.png`);
     roll === 1
       ? changePlayer()
       : activePlayer === 0
@@ -65,7 +60,6 @@ const closeWinnerMessage = function (){
   setShowWinner(false);
   reset();
 }
-console.log(player1, player2);
   return (
     <Board>
       <Button className={"btn btn--new"} onClick={reset}>
@@ -80,13 +74,11 @@ console.log(player1, player2);
       </Button>
       <Player
         className={activePlayer === 0 ? "player--active" : ""}
-        name={player1}
         total={totalScore[0]}
         current={currentScore[0]}
       />
       <Player
         className={activePlayer === 1 ? "player--active" : ""}
-        name={player2}
         total={totalScore[1]}
         current={currentScore[1]}
       />
