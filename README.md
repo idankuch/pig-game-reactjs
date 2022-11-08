@@ -1,6 +1,7 @@
 # Pig Game react.js
 
-This is the classic Pig dice Game made again using react.js.
+This is the classic Pig Game.
+made it once using vanilla.js and now again using react.js.
 
 # About the game
 
