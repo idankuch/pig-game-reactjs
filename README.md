@@ -1,7 +1,7 @@
 # Pig Game react.js
 
 This is the classic Pig Game.  
-made it once using vanilla.js and now again using react.js.
+made it once using vanilla.js and now converted to react.js.
 
 # About the game
 
